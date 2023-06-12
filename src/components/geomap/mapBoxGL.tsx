@@ -45,19 +45,19 @@ const MapBoxGL = () => {
      * Longitude state.
      * @type {number}
      */
-    const [lng, setLng] = useState(35.467987);
+    const [lng, setLng] = useState(35.3581428);
 
     /**
      * Latitude state.
      * @type {number}
      */
-    const [lat, setLat] = useState(38.734802);
+    const [lat, setLat] = useState(38.7569961);
 
     /**
      * Zoom state.
      * @type {number}
      */
-    const [zoom, setZoom] = useState(9);
+    const [zoom, setZoom] = useState(17);
 
     /**
      * Dark mode state.
@@ -77,18 +77,22 @@ const MapBoxGL = () => {
     useEffect(() => {
 
         //if (map.current || !mapContainer.current) return; // initialize map only once and when container is available
-
         map.current = new mapboxgl.Map({
             //@ts-ignore
             container: mapContainer.current,
             style: isDarkMode ? 'mapbox://styles/mapbox/dark-v10' : 'mapbox://styles/mapbox/streets-v12',
             center: [lng, lat],
             zoom: zoom,
-            bearing: 10,
+            bearing: 45,
             pitch: pitch,
             antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
 
         });
+        map.current.addControl(new mapboxgl.FullscreenControl()); // Add the control to the map
+
+        map.current?.on('load', ()=>{
+            console.log("sd")
+        })
 
     }, [isDarkMode, pitch]);
 
@@ -116,8 +120,8 @@ const MapBoxGL = () => {
                     <Box
                         ref={mapContainer}
                         sx={{
-                            width: '99vw',
-                            height: '98vh',
+                            width: '100vw',
+                            height: '100vh',
                         }}
                     >
                         <Switch
@@ -125,7 +129,7 @@ const MapBoxGL = () => {
                             onChange={handleToggleDarkMode}
                             sx={{
                                 position: 'absolute',
-                                top: '10px',
+                                top: '100px',
                                 right: '10px',
                                 zIndex: 500,
                             }}

@@ -25,7 +25,7 @@ const App = () => {
     const [map, setMap] = useState<Status>(Status.openstreet);
 
     useEffect(()=>{
-        setMap(Status.openstreet);
+        setMap(Status.mapbox);
         console.log(map)
     },[map])
     return (
