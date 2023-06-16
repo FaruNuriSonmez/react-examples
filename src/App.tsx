@@ -46,9 +46,6 @@ const App = () => {
                         </>
                     }
                     map={
-                        map == "openstreet" ?
-                            <OpenStreetMap leftDrawerOpen={(status)=>setLeftDrawerOpen(status)}/>
-                            :
                             <MapBoxGL/>
                     }/>
             </>
