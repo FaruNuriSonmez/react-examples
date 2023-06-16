@@ -73,19 +73,31 @@ const MapBoxGL = () => {
      * Longitude state.
      * @type {number}
      */
+<<<<<<< HEAD
     const [lng, setLng] = useState(35.3237349);
+=======
+    const [lng, setLng] = useState(35.3581428);
+>>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Latitude state.
      * @type {number}
      */
+<<<<<<< HEAD
     const [lat, setLat] = useState(38.7614452);
+=======
+    const [lat, setLat] = useState(38.7569961);
+>>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Zoom state.
      * @type {number}
      */
+<<<<<<< HEAD
     const [zoom, setZoom] = useState(17.5);
+=======
+    const [zoom, setZoom] = useState(17);
+>>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Dark mode state.
@@ -244,7 +256,6 @@ const MapBoxGL = () => {
     useEffect(() => {
 
         //if (map.current || !mapContainer.current) return; // initialize map only once and when container is available
-
         map.current = new mapboxgl.Map({
             //@ts-ignore
             container: mapContainer.current,
@@ -255,6 +266,11 @@ const MapBoxGL = () => {
             pitch: pitch,
             antialias: true // create the gl context with MSAA antialiasing, so custom layers are antialiased
         });
+        map.current.addControl(new mapboxgl.FullscreenControl()); // Add the control to the map
+
+        map.current?.on('load', ()=>{
+            console.log("sd")
+        })
 
         //map.current.on('moveend', cacheTiles); // Call cacheTiles function when the map is moved
 
@@ -290,8 +306,8 @@ const MapBoxGL = () => {
                     <Box
                         ref={mapContainer}
                         sx={{
-                            width: '99vw',
-                            height: '98vh',
+                            width: '100vw',
+                            height: '100vh',
                         }}
                     >
                         <Switch
@@ -299,7 +315,7 @@ const MapBoxGL = () => {
                             onChange={handleToggleDarkMode}
                             sx={{
                                 position: 'absolute',
-                                top: '10px',
+                                top: '100px',
                                 right: '10px',
                                 zIndex: 500,
                             }}

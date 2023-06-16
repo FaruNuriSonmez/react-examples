@@ -7,7 +7,7 @@ import {ThemeProvider} from "@mui/material";
 import {darkTheme, lightTheme} from "./styled/themes.index";
 const RootComponent = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const theme = isDarkMode ? darkTheme : lightTheme;
     return (
         <ThemeProvider theme={theme}>

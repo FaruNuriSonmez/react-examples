@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import {
     Accordion, AccordionDetails,
     AccordionSummary,
@@ -8,9 +8,11 @@ import {
     Container,
     List,
     ListItem,
-    SwipeableDrawer
+    SwipeableDrawer, Tab, Tabs
 } from "@mui/material";
 import expeditionsData from "../../../data/expeditions/expeditions.json"
+import Search from "../../search/search";
+import {tab} from "@testing-library/user-event/dist/tab";
 
 const container = window !== undefined ? () => window.document.body : undefined;
 
@@ -22,32 +24,47 @@ interface IMapLeftDrawer {
 
 const MapLeftDrawer = ({drawerOpen, drawerClose, rightDrawerOpen}: IMapLeftDrawer) => {
     const [getDrawerOpen, setDrawerOpen] = React.useState(false);
-
+    const [ loadsLoading, setLoadsLoading ] = useState(true)
+    const [tab, setTab] = useState(0);
 
     useEffect(() => {
-        console.log(drawerOpen, "dsfds")
         setDrawerOpen(drawerOpen)
     }, [drawerOpen])
     const toggleDrawer = (newOpen: boolean) => () => {
         drawerClose(newOpen)
         setDrawerOpen(newOpen);
     };
+
+    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+        setTab(newValue);
+        console.log(newValue)
+        setLoadsLoading(true)
+    };
+
     return (
         <Card sx={{
             backgroundColor: "background.default",
             position: "absolute",
-            height: "91vh",
+            height: "95vh",
             width: 400,
             zIndex: 500,
             background: "palette.background.default",
-            opacity: 0.8
+            opacity: 0.8,
+            borderRadius:0
         }}>
             <CardContent sx={{
                 marginTop: "5rem"
             }}>
-                <Box sx={{
-                    width: "400px"
-                }}>
+                <Search
+                    onChangeText={(text)=>console.log(text)}
+                    debounceDelay={500}
+                    />
+                <Box sx={{width: "400px"}}>
+                    <Tabs value={tab} onChange={handleTabChange} centered>
+                        <Tab label="Seferler" sx={{ color:"palette.text.primary" }}/>
+                        <Tab label="Yükler" sx={{ color:"palette.text.primary" }}/>
+                        <Tab label="Araçlar" sx={{ color:"palette.text.primary" }}/>
+                    </Tabs>
                     <List
                         sx={{
                             width: '100%',
