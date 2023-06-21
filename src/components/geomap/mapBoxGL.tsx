@@ -45,8 +45,7 @@ import {
 
 
 
-mapboxgl.accessToken =
-    'pk.eyJ1IjoiZmFydW51cmlzb25tZXoiLCJhIjoiY2xpZXhpanljMGR3ODNkcDYzOXlhYWhhZiJ9.CKiSRziILv4j1Zt5eDHKBA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZmFydW51cmlzb25tZXoiLCJhIjoiY2xpZXhpanljMGR3ODNkcDYzOXlhYWhhZiJ9.CKiSRziILv4j1Zt5eDHKBA';
 
 
 
@@ -73,31 +72,19 @@ const MapBoxGL = () => {
      * Longitude state.
      * @type {number}
      */
-<<<<<<< HEAD
-    const [lng, setLng] = useState(35.3237349);
-=======
     const [lng, setLng] = useState(35.3581428);
->>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Latitude state.
      * @type {number}
      */
-<<<<<<< HEAD
-    const [lat, setLat] = useState(38.7614452);
-=======
     const [lat, setLat] = useState(38.7569961);
->>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Zoom state.
      * @type {number}
      */
-<<<<<<< HEAD
-    const [zoom, setZoom] = useState(17.5);
-=======
     const [zoom, setZoom] = useState(17);
->>>>>>> 9f2e57113e879a06de194f799b12b2b294bc2d47
 
     /**
      * Dark mode state.
@@ -191,7 +178,6 @@ const MapBoxGL = () => {
             );
             //@ts-ignore
             this.map = map;
-
             // use the Mapbox GL JS map canvas for three.js
             //@ts-ignore
             this.renderer = new WebGLRenderer({
