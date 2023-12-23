@@ -8,3 +8,7 @@
 ## Docs
 
 Full docs deployed to https://farunurisonmez.github.io/react-examples/
+
+## Multi Select Component
+
+![chrome-capture-2023-12-24](https://github.com/farunurisonmez/react-examples/assets/23061257/ae768061-810a-468d-a632-06ceef6949c5)
