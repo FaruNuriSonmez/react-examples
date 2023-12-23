@@ -1,10 +1,23 @@
-# React Examples
+## Case:
+Adcreative.ai frontend developer pozisyonu icin hazirladigimiz bu case'de sizden React.js kullanarak multi-select autocomplete component implement etmenizi istiyoruz.
+Daha sonra bu componenti "Rick and Morty" api'daki karakterleri aramak ve select etmek icin kullanacaksiniz.
 
+Api linki: https://rickandmortyapi.com/documentation/#introduction
 
-| Component | Message | Package | Version |
-|-------|-------|-------|-------|
-|[ Popup ](https://www.npmjs.com/package/react-ts-popup)| React Popup Component - Modals,Tooltips and Menus | <img src="https://img.shields.io/npm/dm/react-ts-popup.svg?maxAge=86400" alt="npm" style="max-width:100%;" /> | <img src="https://img.shields.io/npm/v/react-ts-popup" alt="npm" data-canonical-src="https://img.shields.io/npm/v/react-ts-popup.svg?maxAge=86400" style="max-width:100%;" /> |
+## Verilen assetler:
+* Ornek tasarım assets/multi-select.png.
 
-## Docs
+## Gereksinimler:
+* React vs Typescript
+* Tasarima uygun multi-select implementasyonu
+* input alanina yazilan query ile api sorgulanip popup content'de listelenmesi
+* Listelenen sonuclarda her bir karater icin karater resmi, ismi ve kac bolumde oynadigi bilgisinin gosterilmesi
+* query icin yazilan sozcugun listelenen sonuclarda vurgulanmasi (ornek tasarimda 'ric' aramasi sonuclarinda 'Ric' bold seklinde gosterilmistir)
+* secilen sonuclarin input alanina eklenmesi ve cikarilmasi
+* Keyboard navigation desteklenmeli. Yon tuslari ve tab kullanarak tum islemler yapilabilmeli, input alanindaki secili ogeler veya sonuc listesindeki satirlar gezinebilmeli ve silme/secme islemleri yapilabilmeli.
+* Loading state gosterimi
+* Exception handling ve error statelerinin arayuzde gosterilmesi
+* Ve tabi ki yazdiginiz kodun mimarisi, temiz ve okunakli olmasi belki de en onemli kriter olacaktir.
 
-Full docs deployed to https://farunurisonmez.github.io/react-examples/
+## Olsa iyi olur
+* Deploy edilmis calisan hali ve linki (i.e vercel)
